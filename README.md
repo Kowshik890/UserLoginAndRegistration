@@ -8,6 +8,7 @@
           * add this database name in application.properties while configuring PostgreSQL
           * to connect to database "databaseName" as user "username", type \c "databaseName" [e.g: \c userloginandregistration]
           * to see the list of relations, type \d
+          * to see the data in expanded dispaly, type \x, then write select query.
           ```
               # PostgreSQL Configuration
               spring.datasource.url = jdbc:postgresql://localhost:5432/databaseName
@@ -20,3 +21,7 @@
     * to secure the application, spring security is used
         1. "WebSecurityConfig" class is created which extends spring "WebSecurityConfigurerAdapter" class to authenticate the user
         2. to encrypt the password, "BCryptPasswordEncoder" is used
+    * to register a user:
+        1. check the email whether it is valid or not
+        2. check the email whether the email id exists or not
+        3. after fulfilling all conditions, user details have inserted into database with encrypted password

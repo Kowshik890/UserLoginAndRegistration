@@ -38,7 +38,9 @@
         1. create a interface "EmailSender" and a "EmailService" class which implements "EmailSender" 
         2. "JavaMailSender" is a built-in interface which extends org.springframework.mail.MailSender
         3. for more understanding, go to "EmailService.java" file (Link)
-        4. configure "application.properties" file for sending email
+        4. for confirming email, use a third party email provider "MailDev"
+        5. it can be used by both "Node" & "Docker". Link: [MailDev Install & Run.](https://github.com/maildev/maildev#readme)
+        6. configure "application.properties" file for sending email
            ```
               # Email configuration
               spring.mail.host = localhost
@@ -52,9 +54,6 @@
               spring.mail.properties.mail.smtp.timeout=3000
               spring.mail.properties.mail.smtp.writetimeout=5000
            ```
-           
-        5. for confirming email, use a third party email provider "MailDev"
-        6. it can be used by both "Node" & "Docker". Link: [MailDev Install & Run.](https://github.com/maildev/maildev#readme)
         7. given below is an experiment demonstration
            ### Registration Request (Postman)
            

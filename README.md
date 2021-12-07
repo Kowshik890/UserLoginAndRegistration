@@ -37,7 +37,7 @@
     * to send email for confirmation
         1. create a interface "EmailSender" and a "EmailService" class which implements "EmailSender" 
         2. "JavaMailSender" is a built-in interface which extends org.springframework.mail.MailSender
-        3. for more understanding, go to "EmailService.java" file (Link)
+        3. for more understanding, go to [EmailService.java.](https://github.com/Kowshik890/UserLoginAndRegistration/blob/main/UserLoginAndRegistration/src/main/java/com/example/UserLoginAndRegistration/service/EmailService.java)
         4. for confirming email, use a third party email provider "MailDev"
         5. it can be used by both "Node" & "Docker". Link: [MailDev Install & Run.](https://github.com/maildev/maildev#readme)
         6. configure "application.properties" file for sending email

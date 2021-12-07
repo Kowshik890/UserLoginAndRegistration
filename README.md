@@ -34,3 +34,24 @@
         4. check its expiry time whether the token has expired or not
         5. UPDATE the confirmed time for that token in ConfirmationToken table
         6. take the user email to UPDATE "enable = true" in AppUser table which was "enable = false" initially
+    * to send email for confirmation
+        1. create a interface "EmailSender" and a "EmailService" class which implements "EmailSender" 
+        2. "JavaMailSender" is a built-in interface which extends org.springframework.mail.MailSender
+        3. for more understanding, go to "EmailService.java" file (Link)
+        4. configure "application.properties" file for sending email
+           ```
+              # Email configuration
+              spring.mail.host = localhost
+              spring.mail.port = 1025
+              spring.mail.username = hello
+              spring.mail.password = hello
+              spring.mail.properties.mail.smtp.ssl.trust=*
+              spring.mail.properties.mail.smtp.auth=true
+              spring.mail.properties.mail.smtp.starttls.enable=true
+              spring.mail.properties.mail.smtp.connectiontimeout=5000
+              spring.mail.properties.mail.smtp.timeout=3000
+              spring.mail.properties.mail.smtp.writetimeout=5000
+           ```
+           
+        5. given below is an experiment demonstration
+        

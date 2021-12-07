@@ -19,7 +19,7 @@ public class RegistrationService {
     private final AppUserService appUserService;
     private final EmailValidator emailValidator;
     private final ConfirmationTokenService confirmationTokenService;
-    //private final EmailSender emailSender;
+    private final EmailSender emailSender;
 
     public String register(RegistrationRequest request) {
         boolean isEmailValid = emailValidator.test(request.getEmail());
@@ -39,10 +39,10 @@ public class RegistrationService {
         );
 
         String link = "http://localhost:8080/api/v1/registration/confirm?token=" + token;
-//        emailSender.send(
-//                request.getEmail(),
-//                buildEmail(request.getFirstName(), link));
-//
+        emailSender.send(
+                request.getEmail(),
+                buildEmail(request.getFirstName(), link));
+
         return token;
     }
 
@@ -57,7 +57,7 @@ public class RegistrationService {
 
         LocalDateTime expiredAt = confirmationToken.getExpiredAt();
 
-        if(expiredAt.isBefore(LocalDateTime.now())) {
+        if(expiredAt.isBefore(LocalDateTime.now())) {     // expire time is earlier than current time
             throw new IllegalStateException("Token has expired.");
         }
 
@@ -68,7 +68,7 @@ public class RegistrationService {
         return "Email confirmed.";
     }
 
-    /*private String buildEmail(String name, String link) {
+    private String buildEmail(String name, String link) {
         return "<div style=\"font-family:Helvetica,Arial,sans-serif;font-size:16px;margin:0;color:#0b0c0c\">\n" +
                 "\n" +
                 "<span style=\"display:none;font-size:1px;color:#fff;max-height:0\"></span>\n" +
@@ -135,5 +135,5 @@ public class RegistrationService {
                 "  </tbody></table><div class=\"yj6qo\"></div><div class=\"adL\">\n" +
                 "\n" +
                 "</div></div>";
-    }*/
+    }
 }

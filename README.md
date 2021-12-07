@@ -43,8 +43,8 @@
               # Email configuration
               spring.mail.host = localhost
               spring.mail.port = 1025
-              spring.mail.username = hello
-              spring.mail.password = hello
+              spring.mail.username = username
+              spring.mail.password = password
               spring.mail.properties.mail.smtp.ssl.trust=*
               spring.mail.properties.mail.smtp.auth=true
               spring.mail.properties.mail.smtp.starttls.enable=true
@@ -53,5 +53,12 @@
               spring.mail.properties.mail.smtp.writetimeout=5000
            ```
            
-        5. given below is an experiment demonstration
+        5. for confirming email, use a third party email provider "MailDev"
+        6. it can be used by both "Node" & "Docker". Link: [MailDev Install & Run.](https://github.com/maildev/maildev#readme)
+        7. given below is an experiment demonstration
+           ### Registration Request (Postman)
+           
+           [![Postman.png](https://i.postimg.cc/SsKg7kNS/Postman.png)](https://postimg.cc/SXwLm0M3)
         
+           ### Email Verrification Link with Expiry (MailDev)
+           [![MailDev.png](https://i.postimg.cc/4xPfmQYD/MailDev.png)](https://postimg.cc/WdDLyr68)

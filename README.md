@@ -4,7 +4,7 @@
      * create database in PostgreSQL
           * open terminal and write "psql postgres"
           * to see the list of databases, type "\l"
-          * create database by "create database 'databaseName'"
+          * create database by "create database 'databaseName'";  // N.B: Don't forget to use ";"
           * add this database name in application.properties while configuring PostgreSQL
           * to connect to database "databaseName" as user "username", type \c "databaseName" [e.g: \c userloginandregistration]
           * to see the list of relations, type \d
